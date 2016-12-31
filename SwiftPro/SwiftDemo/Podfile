@@ -1,0 +1,11 @@
+platform :ios, '8.0' 
+
+target 'SwiftDemo' do 
+
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'ObjectMapper'
+    pod 'Popover'
+
+use_frameworks!
+end
