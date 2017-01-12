@@ -20,7 +20,18 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
-        // Do any additional setup after loading the view.
+        
+        let rightBtn = UIButton.init(type: UIButtonType.custom)
+        rightBtn.frame = CGRect(x:10, y:0, width:50, height:30)
+        rightBtn.setTitle("点击", for: UIControlState.normal)
+        rightBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
+        let rightItem = UIBarButtonItem.init(customView: rightBtn)
+        self.navigationItem.rightBarButtonItem = rightItem
+        
+        rightBtn.addTarget(self, action: #selector(pushDetailAction), for: UIControlEvents.touchUpInside)
+        
+        
+        //注册cell 和设置tableVddiew代理
         mTableView.register(UINib(nibName:"HomeTableViewCell", bundle:nil), forCellReuseIdentifier:"HomeCell")
         mTableView.delegate = self
         mTableView.dataSource = self
@@ -81,7 +92,7 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
             (DataResponse) in
             
             print("dic: ----\(DataResponse.result.value)")
-            let jsonDic:NSDictionary = (DataResponse.result.value as AnyObject) as! NSDictionary;
+            let jsonDic:NSDictionary = ((DataResponse.result.value as AnyObject) as? NSDictionary)!;
             // 字典转model。用ObjectMapper
             // 判断jsonDic是不是为空，
             if jsonDic.count>0{
@@ -96,7 +107,14 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
 
         }
         
+        //文件上传
+       
+        
+        
     }
+    
+    
+    
     
     ///////---- 表格代理
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -120,6 +138,13 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+       pushDetailAction()
+    }
+    
+    
+    
+    func pushDetailAction()
+    {
         let detailVC = DetailViewController()
         detailVC.mDelegate = self
         detailVC.blockproerty = { (backMsg) in
@@ -127,6 +152,7 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
         }
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
+    
     ///回调代理
     func didSomething(name:String)
     {
