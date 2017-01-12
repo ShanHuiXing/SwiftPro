@@ -19,13 +19,6 @@ class ViewController: UIViewController {
         customBtn.backgroundColor = UIColor.red
         
         
-        let rightBtn = UIButton.init(type: UIButtonType.custom)
-        rightBtn.frame = CGRect(x:10, y:0, width:50, height:30)
-        rightBtn.setTitle("点击", for: UIControlState.normal)
-        rightBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
-        let rightItem = UIBarButtonItem.init(customView: rightBtn)
-        self.navigationItem.rightBarButtonItem = rightItem
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
