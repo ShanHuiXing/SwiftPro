@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 import ObjectMapper
+import Popover
 
 class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewDataSource,MyDelegate
 {
@@ -92,17 +93,21 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
             (DataResponse) in
             
             print("dic: ----\(DataResponse.result.value)")
-            let jsonDic:NSDictionary = ((DataResponse.result.value as AnyObject) as? NSDictionary)!;
-            // 字典转model。用ObjectMapper
-            // 判断jsonDic是不是为空，
-            if jsonDic.count>0{
-                // 用ObjectMapper 来进行转化模型
-                let modelArr = Mapper<HomeModel>().mapArray(JSONArray:jsonDic["datasource"] as! Array)!
-                print(" ssss  ====\(modelArr)")
-                weakSelf?.dataArray.removeAllObjects()
-                weakSelf?.dataArray.addObjects(from: modelArr)
-                weakSelf?.mTableView.reloadData()
-                
+            
+            if DataResponse.result.value != nil
+            {
+                let jsonDic:NSDictionary = ((DataResponse.result.value as AnyObject) as? NSDictionary)!;
+                // 字典转model。用ObjectMapper
+                // 判断jsonDic是不是为空，
+                if jsonDic.count>0{
+                    // 用ObjectMapper 来进行转化模型
+                    let modelArr = Mapper<HomeModel>().mapArray(JSONArray:jsonDic["datasource"] as! Array)!
+                    print(" ssss  ====\(modelArr)")
+                    weakSelf?.dataArray.removeAllObjects()
+                    weakSelf?.dataArray.addObjects(from: modelArr)
+                    weakSelf?.mTableView.reloadData()
+                    
+                }
             }
 
         }
@@ -145,9 +150,13 @@ class HomeViewController: AppBaseViewController,UITableViewDelegate,UITableViewD
     
     func pushDetailAction()
     {
+        
         let detailVC = DetailViewController()
         detailVC.mDelegate = self
         detailVC.blockproerty = { (backMsg) in
+            
+            let pop = Popover()
+            pop.show(self.view, fromView: self.view)
             print("----\(backMsg)---")
         }
         self.navigationController?.pushViewController(detailVC, animated: true)

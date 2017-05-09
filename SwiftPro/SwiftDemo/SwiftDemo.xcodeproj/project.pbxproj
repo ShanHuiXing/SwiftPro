@@ -32,6 +32,9 @@
 		925B0C4F1DF7A9B7000D1C16 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B0C4D1DF7A9B7000D1C16 /* DetailViewController.swift */; };
 		925B0C501DF7A9B7000D1C16 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925B0C4E1DF7A9B7000D1C16 /* DetailViewController.xib */; };
 		925B0C521DF7BE32000D1C16 /* AppBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B0C511DF7BE32000D1C16 /* AppBaseViewController.swift */; };
+		92D48CC11E7293F900CB0D8A /* loadImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D48CBD1E7293F900CB0D8A /* loadImageManager.swift */; };
+		92D48CC21E7293F900CB0D8A /* wheelImagePlaceHold.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D48CBF1E7293F900CB0D8A /* wheelImagePlaceHold.png */; };
+		92D48CC31E7293F900CB0D8A /* WheelImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D48CC01E7293F900CB0D8A /* WheelImageView.swift */; };
 		92D7C3701DF56803008CD5D1 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D7C36F1DF56803008CD5D1 /* ObjectMapper.framework */; };
 		C593B8C42AAD7D6C0CAEA043 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE209129AE0D2E4D91C74291 /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,9 @@
 		925B0C4D1DF7A9B7000D1C16 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		925B0C4E1DF7A9B7000D1C16 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		925B0C511DF7BE32000D1C16 /* AppBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseViewController.swift; sourceTree = "<group>"; };
+		92D48CBD1E7293F900CB0D8A /* loadImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadImageManager.swift; sourceTree = "<group>"; };
+		92D48CBF1E7293F900CB0D8A /* wheelImagePlaceHold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelImagePlaceHold.png; sourceTree = "<group>"; };
+		92D48CC01E7293F900CB0D8A /* WheelImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelImageView.swift; sourceTree = "<group>"; };
 		92D7C36F1DF56803008CD5D1 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftDemo-bwzpalrlgcovikbjbppoimcojuch/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		92D9D4E81DF3B985000258D1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftDemo-bwzpalrlgcovikbjbppoimcojuch/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		92D9D4EA1DF3C62F000258D1 /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftDemo-bwzpalrlgcovikbjbppoimcojuch/Build/Products/Debug-iphonesimulator/HandyJSON/HandyJSON.framework"; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				920F24111DEFB92200FF4FE9 /* AppDelegate.swift */,
 				920F24131DEFB92200FF4FE9 /* ViewController.swift */,
 				920F24151DEFB92200FF4FE9 /* Main.storyboard */,
+				92D48CBC1E7293F900CB0D8A /* WheelImage */,
 				9210690B1DF694F500FCEF4D /* Base */,
 				921068FD1DF6938C00FCEF4D /* Home */,
 				921069141DF69A1C00FCEF4D /* News */,
@@ -351,6 +358,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		92D48CBC1E7293F900CB0D8A /* WheelImage */ = {
+			isa = PBXGroup;
+			children = (
+				92D48CBD1E7293F900CB0D8A /* loadImageManager.swift */,
+				92D48CBE1E7293F900CB0D8A /* wheelImagePlaceHold */,
+				92D48CC01E7293F900CB0D8A /* WheelImageView.swift */,
+			);
+			path = WheelImage;
+			sourceTree = "<group>";
+		};
+		92D48CBE1E7293F900CB0D8A /* wheelImagePlaceHold */ = {
+			isa = PBXGroup;
+			children = (
+				92D48CBF1E7293F900CB0D8A /* wheelImagePlaceHold.png */,
+			);
+			path = wheelImagePlaceHold;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -461,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D48CC21E7293F900CB0D8A /* wheelImagePlaceHold.png in Resources */,
 				9210691F1DF69A7100FCEF4D /* NewsListViewController.xib in Resources */,
 				920F241C1DEFB92200FF4FE9 /* LaunchScreen.storyboard in Resources */,
 				921069271DF69AA000FCEF4D /* MyCenterViewController.xib in Resources */,
@@ -553,6 +579,8 @@
 				921069061DF6938C00FCEF4D /* HomeViewController.swift in Sources */,
 				921585411DF7E4F30061EFF9 /* AppNavigationController.swift in Sources */,
 				925B0C521DF7BE32000D1C16 /* AppBaseViewController.swift in Sources */,
+				92D48CC11E7293F900CB0D8A /* loadImageManager.swift in Sources */,
+				92D48CC31E7293F900CB0D8A /* WheelImageView.swift in Sources */,
 				921069221DF69A8B00FCEF4D /* ScienceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -60,7 +60,6 @@ class MainTabBarController: UITabBarController {
         fourNav.tabBarItem.badgeValue = "new"
         fourNav.tabBarItem.image = UIImage(named: kTabFourImageN)
         fourNav.tabBarItem.selectedImage = UIImage(named: kTabFourImageP)
-        
         fourNav.setNavigationBarHidden(true, animated: true)
         self.addChildViewController(fourNav)
         
